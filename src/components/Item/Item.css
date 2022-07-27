@@ -1,0 +1,41 @@
+.colItem{
+    padding: 1%;
+}
+.container-item{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    padding:2%;
+    /* max-width: 460px;
+    max-height: 460px; */
+}
+
+.container-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.container-img img {
+    width:50%;
+    max-height: 300px;
+}
+
+.container-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    object-fit:contain;
+}
+
+.container-desc h5,h6,p{
+    font-family: 'Mochiy Pop One', sans-serif;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+p{
+    font-weight: 100;
+    color:dimgrey;
+}

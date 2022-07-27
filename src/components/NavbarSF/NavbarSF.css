@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Hubballi&family=Mochiy+Pop+One&family=Red+Hat+Mono:ital,wght@0,400;1,700&family=Roboto+Slab:wght@500&family=Teko:wght@300&display=swap');
+.Navbar{
+    border-top: 30px solid black;
+}
+
+.Navbar .imgContainer div img{
+    height: 60px;
+    margin-bottom:-20px;
+    border-radius: 5%;
+    margin-left: 15%;
+}
+
+.bottomBar{
+    background-color: black;
+    height: 20px;
+}
+
+.Navbar .container-nav{
+    justify-content: center;
+}
+
+a{
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-weight: 500;
+    color: black !important;
+}
+
+.Navbar .container-nav ul li.container-cartWidget{
+    margin-top:3%;
+    display:flex ;
+    justify-content: center;
+}
+
+
+
+
+/*MEDIA QUERYS*/
+
+
+@media (min-width:768px) {
+    .Navbar .imgContainer div img{
+        height: 70px;
+        margin-bottom:-30px;
+    }
+
+    .bottomBar{
+        height: 28px;
+    }
+
+    .Navbar .container-nav ul div.container-navitems{
+        width: 80%;
+        display: flex;
+        flex-direction: row !important;
+        justify-content: center;
+        padding-left: 20%;
+    }
+    
+    .Navbar .container-nav ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly !important;
+        align-items: center;
+    }
+    
+    .Navbar .container-nav ul div.a{
+        width: 20%;
+        display: flex;
+        justify-content: end;
+    }
+
+    
+}
+
+@media (min-width:1000px) {
+    .Navbar .imgContainer div img{
+        height: 85px;
+        margin-bottom:-37px;
+    }
+
+    .bottomBar{
+        height: 37px;
+    }
+
+    .Navbar .container-nav{
+        font-size: 18px;
+    }
+
+    .Navbar .container-nav ul li.container-cartWidget{
+        margin-top:4%;
+    }
+}

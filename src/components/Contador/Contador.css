@@ -1,0 +1,61 @@
+.container-contador{
+    min-width:fit-content;
+    max-width: 150px;
+    min-height: fit-content;
+    margin: 2% auto 1% auto;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 1%;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-contador .containerCant{
+    font-size: 7px;
+    width: 100%;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+}
+
+.container-contador .buttonsContainer .btnCarrito{
+    background-color:black;
+    font-family: 'Mochiy Pop One', sans-serif;
+    border: none;
+    font-size: x-small;
+    font-weight: 200;
+}
+
+.containerCant h3{
+    margin-top: 5%;
+    width: 30%;
+}
+
+.btnCant{
+    border:none;
+    background-color: white;
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+    transition: all 0.5s;
+    width: 20%;
+    transition: none;
+}
+
+.btnCant:hover{
+    background-color: transparent;
+    color: black;
+    transform: scale(1.2);
+}
+
+.btnCant:focus{
+    border: none;
+    background-color: white;
+    color: black;
+    box-shadow: none;
+}
