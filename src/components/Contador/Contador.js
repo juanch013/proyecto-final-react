@@ -16,8 +16,7 @@ const Contador = ({stock, valorInicial, onAdd}) =>{
             setcontador(cont-1)
         }
     }
-
-    return(
+        return(
         <div className="container-contador">
             <div className="containerCant">
                 <Button className="btnCant" onClick={sumar}>+</Button>
@@ -29,6 +28,9 @@ const Contador = ({stock, valorInicial, onAdd}) =>{
             </div>
         </div>
     )
+    
+
+    
 }
 
 export default Contador

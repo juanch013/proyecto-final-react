@@ -10,6 +10,8 @@ import { Navbar,
     Nav,
     NavbarBrand} from 'reactstrap'
 
+import { Link } from 'react-router-dom'
+
 const NavbarSF = () => {
     const [isOpen, setIsOpen] = useState(false);
     
@@ -18,7 +20,7 @@ const NavbarSF = () => {
         <Navbar color="light" light expand="md" className="Navbar">
             <NavbarBrand href="/" className="imgContainer">
                 <div>
-                    <img src="images/logo FoodSpot.png" alt="a"/>
+                    <img src={`${process.env.PUBLIC_URL}/images/logo FoodSpot.png`} alt="a"/>
                 </div>
             </NavbarBrand>
             <NavbarToggler onClick={() => { setIsOpen(!isOpen) }} />
@@ -26,9 +28,27 @@ const NavbarSF = () => {
             <Collapse isOpen={isOpen} navbar className="container-nav">
                 <Nav className="mr-auto" navbar>
                         <div className="container-navitems">
+                         
                         <NavItem>
                             <NavLink href="#">Menu</NavLink>
                         </NavItem>
+
+                        
+                            <NavItem>
+                                    <NavLink href="#">
+                                        <Link to='/categoria/postre' className="link">Postres</Link>
+                                    </NavLink>
+                            </NavItem>
+                        
+
+                        
+                            <NavItem>
+                                <NavLink href="#">
+                                    <Link to='/categoria/principal' className="link">Platos</Link>
+                                </NavLink>
+                            </NavItem>
+                        
+
                         <NavItem>
                             <NavLink href="#">Promociones</NavLink>
                         </NavItem>
