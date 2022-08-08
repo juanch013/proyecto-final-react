@@ -1,7 +1,12 @@
-import { prettyDOM } from '@testing-library/dom'
-import './ItemDetail.css'
 
+import './ItemDetail.css'
+import '../Contador/Contador'
+import Contador from '../Contador/Contador'
 const ItemDetail = ({nombre,imgSrc,precio,stock,desc}) => {
+    const onAdd = ()=>{
+        
+    }
+
     return (
         <div className="containerDetalle">
            <div className="contImg">
@@ -12,7 +17,11 @@ const ItemDetail = ({nombre,imgSrc,precio,stock,desc}) => {
                <h1>{nombre}</h1>
                <h3>${precio}</h3>
                <p>{desc}</p>
+
+               <Contador valorInicial={0} stock={stock} onAdd={onAdd}/>
            </div>
+
+           
         </div>
     )
 }

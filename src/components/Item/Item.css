@@ -5,10 +5,16 @@
     border: 2px solid rgb(79, 79, 79);
     width: 100%;
     height: 100%;
+    min-height: 350px;
     border-radius: 5%;
     padding:2%;
     box-shadow:0px 0px 8px 1px rgba(0, 0, 0, 0.4);
     transition: all 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
 }
 
 .container-img{
@@ -19,15 +25,16 @@
 }
 
 .container-img img {
-    width:50%;
+    width:100%;
     max-height: 300px;
 }
 
 .container-desc{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: left;
     object-fit:contain;
+    width:100%;
 }
 
 .container-desc h5,h6,p{

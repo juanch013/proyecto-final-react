@@ -8,7 +8,11 @@ import { Navbar,
     Collapse,
     NavLink,
     Nav,
-    NavbarBrand} from 'reactstrap'
+    NavbarBrand,
+    DropdownItem,
+    UncontrolledDropdown,
+    DropdownMenu,
+    DropdownToggle} from 'reactstrap'
 
 import { Link } from 'react-router-dom'
 
@@ -27,37 +31,41 @@ const NavbarSF = () => {
             
             <Collapse isOpen={isOpen} navbar className="container-nav">
                 <Nav className="mr-auto" navbar>
-                        <div className="container-navitems">
-                         
-                        <NavItem>
-                            <NavLink href="#">Menu</NavLink>
-                        </NavItem>
-
-                        
-                            <NavItem>
-                                    <NavLink href="#">
-                                        <Link to='/categoria/postre' className="link">Postres</Link>
-                                    </NavLink>
-                            </NavItem>
-                        
-
-                        
+                        <div className="container-navitems">     
                             <NavItem>
                                 <NavLink href="#">
-                                    <Link to='/categoria/principal' className="link">Platos</Link>
+                                    <Link to='/' className="link">Menu</Link>
                                 </NavLink>
                             </NavItem>
+
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                Categorias
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <DropdownItem>
+                                        <Link to='/categoria/entrada' className="link">Entradas</Link>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <Link to='/categoria/principal' className="link">Plato Principal</Link>
+                                    </DropdownItem>
+                
+                                    <DropdownItem>
+                                        <Link to='/categoria/postre' className="link">Postres</Link>
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
                         
 
-                        <NavItem>
-                            <NavLink href="#">Promociones</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#">Sucursales</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#">Contacto</NavLink>
-                        </NavItem>
+                            <NavItem>
+                                <NavLink href="#">Promociones</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="#">Sucursales</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="#">Contacto</NavLink>
+                            </NavItem>
                         </div>
                         <div className="a">
                         <NavItem className="container-cartWidget">

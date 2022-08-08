@@ -18,7 +18,7 @@ const ItemDetailContainer = ()=>{
     },[IdPlato])
 
     return(
-        <div>
+        <div className="g-0 container-detail">
             <ItemDetail {...plato}/>
         </div>
 

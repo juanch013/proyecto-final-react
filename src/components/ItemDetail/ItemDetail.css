@@ -18,14 +18,13 @@ div div.contDesc{
 }
 
 .contImg{
-    display: flex;
-    width: 50%;
-    object-fit: contain;
+    margin: 0px 5% 0px 0px;
 }
 
 .contImg img{
-    max-height: 300px;
-    width: auto;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 
