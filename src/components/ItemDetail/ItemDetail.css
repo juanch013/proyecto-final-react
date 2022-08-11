@@ -1,7 +1,9 @@
 .containerDetalle{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 
 div div.contDesc{
@@ -10,38 +12,73 @@ div div.contDesc{
     justify-content: center;
     text-align: left;
 
-    width: 50%;
+    width: 100%;
 }
 
 .contDesc h1{
     margin-bottom: 10%;
 }
 
-.contImg{
+div div.contImg{
     margin: 0px 5% 0px 0px;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
 }
 
 .contImg img{
-    width: 100%;
+    max-width: 60%;
     margin: 0px;
     padding: 0px;
+    max-height: 400px;
 }
 
 
 
-@media (min-width:400px) {
+@media (min-width:576px) {
     .contImg img{
         max-height: 400px;
         width: auto;
     }
 }
 
-@media (min-width:750px) {
-    .contImg img{
-        max-height: 700px;
-        width: auto;
+@media (min-width:769px) {
+    .containerDetalle{
+        flex-direction: row;
+    }
+
+    div div.contImg{
+        width: 50%;
+        padding-left: 5%;
+    }
+
+    div div.contDesc{
+        width: 50%;
+        padding-left: 10%;
     }
 }
 
+@media (min-width:1100px) {
+    div div.contImg{
+        width: 60%;
+        padding: 0px;
+        object-fit: contain;
+    }
+
+    div div.contDesc{
+        width: 40%;
+        padding-left: 10%;
+        margin: 0px;
+        padding:0px;
+    }
+
+     div div.contImg img{
+        max-height: 800px;
+        margin: 10% 0px 0px 0px;
+        padding:0px;
+    } 
+}
 
 
