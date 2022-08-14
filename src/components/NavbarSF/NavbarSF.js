@@ -1,5 +1,6 @@
 import './NavbarSF.css'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
+
 import '../CartWidget/CartWidget'
 import CartWidget from '../CartWidget/CartWidget'
 import { Navbar,
@@ -18,6 +19,9 @@ import { Link } from 'react-router-dom'
 
 const NavbarSF = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    
+
     
     return(
         <>
@@ -42,7 +46,7 @@ const NavbarSF = () => {
                                 <DropdownToggle nav caret>
                                 Categorias
                                 </DropdownToggle>
-                                <DropdownMenu right>
+                                <DropdownMenu end>
                                     <DropdownItem>
                                         <Link to='/categoria/entrada' className="link">Entradas</Link>
                                     </DropdownItem>

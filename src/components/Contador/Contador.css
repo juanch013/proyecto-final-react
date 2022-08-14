@@ -1,16 +1,30 @@
 .container-contador{
-    min-width:fit-content;
-    max-width: 150px;
-    min-height: fit-content;
-    margin: 2% auto 1% auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    
+    /* margin: 2% auto 1% auto; */
     border-radius: 5%;
     padding: 1%;
 
+    height:fit-content;
+    padding: 2% 10% 2% 10%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
+}
+
+.buttonsContainer{
+    object-fit: contain;
+    padding: 2%;
+}
+
+.container-fila{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+    padding: 0px;
 }
 
 .container-contador .containerCant{
@@ -29,6 +43,11 @@
     border: none;
     font-size: x-small;
     font-weight: 200;
+
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    
 }
 
 .containerCant h3{
@@ -37,14 +56,16 @@
 }
 
 .btnCant{
+    
     border:none;
     background-color: white;
     color: black;
     font-size: x-large;
     font-weight: 500;
     transition: all 0.5s;
-    width: 20%;
-    margin-bottom: 6%;
+    width: 50%;
+    margin:0px 15% 2% 15%;
+    
     transition: none;
 }
 

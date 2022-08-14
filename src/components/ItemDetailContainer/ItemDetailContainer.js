@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react'
 import { getPlatoById } from '../../peticionDatos';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-const ItemDetailContainer = ()=>{
+const ItemDetailContainer = ({agregarItem})=>{
     const [plato, setPlato] = useState();
     const {IdPlato} = useParams()
     
@@ -19,7 +19,7 @@ const ItemDetailContainer = ()=>{
 
     return(
         <div className="g-0 container-detail">
-            <ItemDetail {...plato}/>
+            <ItemDetail {...plato} agregarItem={agregarItem}/>
         </div>
 
     )

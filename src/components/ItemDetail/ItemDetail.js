@@ -2,28 +2,45 @@
 import './ItemDetail.css'
 import '../Contador/Contador'
 import Contador from '../Contador/Contador'
-const ItemDetail = ({nombre,imgSrc,precio,stock,desc}) => {
-    const onAdd = ()=>{
-        console.log("click en el contador")
-    }
+import { useState,useContext } from 'react'
+import { Link } from 'react-router-dom'
+import contextoCarrito from '../../context/contextoCarrito/contextoCarrito'
 
-    const handeOnClickDescripcion= (e)=>{
-        // e.stopPropagation()
-        console.log("click en container descripcion")
-    }
+const ItemDetail = ({id,nombre,imgSrc,precio,stock,desc}) => {
+    const [cantidad, setCantidad] = useState(0);
+
+    const {agregarItemAlCarrito} = useContext(contextoCarrito);
+
+    const agregarCarrito = (cant)=>{
+        setCantidad(cant)
+
+        const productoParaAgregar = {
+            id,nombre,imgSrc,precio,cant
+        }
+        agregarItemAlCarrito(productoParaAgregar)
+        console.log(cant)
+      }
 
     return (
-        <div className="containerDetalle" onClick={ ()=>{console.log("click en container deatlle")}}>
+        <div className="containerDetalle">
            <div className="contImg">
                 <img src={imgSrc} alt={nombre}/>
            </div>
 
-           <div className="contDesc" onClick={ handeOnClickDescripcion}>
+           <div className="contDesc">
                <h1>{nombre}</h1>
                <h3>${precio}</h3>
                <p>{desc}</p>
 
-               <Contador valorInicial={0} stock={stock} onAdd={onAdd}/>
+                {
+                    cantidad == 0 ? (<Contador valorInicial={cantidad} stock={stock} onAdd={agregarCarrito}/>) 
+                    : (
+                    <div className="container-link-to-carrito">
+                        <Link className='link-to-carrito' to='/Carrito'>Ir Al Carrito</Link>
+                    </div>
+                    )
+                }
+               
            </div>
 
            

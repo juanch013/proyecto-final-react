@@ -1,8 +1,11 @@
 import './Item.css'
 import { Col } from 'reactstrap'
 import Contador from '../Contador/Contador'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 const Item = ({id,stock,nombre,precio,img}) =>{
+    
+
     return (
         <Col className="colItem" xs="12" xl="3" lg="4" sm="6">
             <Link to={`/detalle/${id}`} className="link">

@@ -35,6 +35,18 @@ div div.contImg{
     max-height: 400px;
 }
 
+div.container-link-to-carrito .link-to-carrito{
+    margin: 5% auto 0px auto !important;
+}
+
+div.container-link-to-carrito{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
 
 
 @media (min-width:576px) {
@@ -79,6 +91,8 @@ div div.contImg{
         margin: 10% 0px 0px 0px;
         padding:0px;
     } 
+
+    
 }
 
 
