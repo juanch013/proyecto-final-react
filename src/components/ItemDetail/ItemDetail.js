@@ -4,12 +4,12 @@ import '../Contador/Contador'
 import Contador from '../Contador/Contador'
 import { useState,useContext } from 'react'
 import { Link } from 'react-router-dom'
-import contextoCarrito from '../../context/contextoCarrito/contextoCarrito'
+import CarritoContext from '../../context/ContextoCarrito'
 
 const ItemDetail = ({id,nombre,imgSrc,precio,stock,desc}) => {
     const [cantidad, setCantidad] = useState(0);
 
-    const {agregarItemAlCarrito} = useContext(contextoCarrito);
+    const { agregarItemAlCarrito } = useContext(CarritoContext);
 
     const agregarCarrito = (cant)=>{
         setCantidad(cant)
@@ -17,8 +17,9 @@ const ItemDetail = ({id,nombre,imgSrc,precio,stock,desc}) => {
         const productoParaAgregar = {
             id,nombre,imgSrc,precio,cant
         }
+        console.log(agregarItemAlCarrito)
+
         agregarItemAlCarrito(productoParaAgregar)
-        console.log(cant)
       }
 
     return (
@@ -33,7 +34,7 @@ const ItemDetail = ({id,nombre,imgSrc,precio,stock,desc}) => {
                <p>{desc}</p>
 
                 {
-                    cantidad == 0 ? (<Contador valorInicial={cantidad} stock={stock} onAdd={agregarCarrito}/>) 
+                    cantidad === 0 ? (<Contador valorInicial={0} stock={stock} onAdd={agregarCarrito}/>) 
                     : (
                     <div className="container-link-to-carrito">
                         <Link className='link-to-carrito' to='/Carrito'>Ir Al Carrito</Link>

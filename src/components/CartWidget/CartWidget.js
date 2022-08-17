@@ -1,6 +1,6 @@
 import './CartWidget.css'
 import { useState,useEffect,useContext } from 'react'
-import contextoCarrito  from '../../context/contextoCarrito/contextoCarrito'
+import contextoCarrito  from '../../context/ContextoCarrito'
 
 const CartWidget = () =>{
     const  {getCantidadItems} = useContext(contextoCarrito);

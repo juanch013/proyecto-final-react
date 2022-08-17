@@ -19,10 +19,6 @@ import { Link } from 'react-router-dom'
 
 const NavbarSF = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-    
-
-    
     return(
         <>
         <Navbar color="light" light expand="md" className="Navbar">
