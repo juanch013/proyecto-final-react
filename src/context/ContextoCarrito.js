@@ -6,43 +6,45 @@ const CarritoContext = createContext()
 export const ContextoCarritoProvider = ({ children })=>{
        
       const [Carrito, setCarrito] = useState([]);
-    
+      console.log(Carrito)
+
       const agregarItemAlCarrito = (ProductoParaAgregar) => {
-        eliminarItemCarrito(3)
-      // const carritoActualizado = [...Carrito, ProductoParaAgregar]
-      // console.log(carritoActualizado) 
-      // setCarrito(carritoActualizado)
-      // console.log(Carrito)
-        
+        if(ProductoParaAgregar.cant !== 0){
 
-    //     if(!estaEnCarrito(productoParaAgregar.id)){
-    //       setCarrito([...Carrito, productoParaAgregar])
-    //     }else{
-    //       
-    //     }
-    }
-
+          if(!estaEnCarrito(ProductoParaAgregar.id)){
+            setCarrito([...Carrito, ProductoParaAgregar])
+          }else{
+            let carritoAct = Carrito.map((item)=>{
+              if(item.id === ProductoParaAgregar.id){
+                item.cant = ProductoParaAgregar.cant
+                return item
+              }else{
+                return item
+              }
+            })
+            setCarrito(carritoAct)
+          }
+        }
+      }
     const estaEnCarrito = (id)=>{
       return Carrito.some(it => it.id === id)
     }
 
     const getCantidadItems = () => {
-      let ret = 0 
-      Carrito.forEach(prod => {
-        ret += prod.cant
-      })
-      return ret
+      return Carrito.length
     }
 
     const eliminarItemCarrito = (id) =>{
-      
       let carritoActualizado = Carrito.filter(it => it.id !== id)
       setCarrito(carritoActualizado)
-      
+    }
+
+    const limpiarCarrito = () =>{
+      setCarrito([])
     }
     
     return(
-      <CarritoContext.Provider value = {{ Carrito, agregarItemAlCarrito, getCantidadItems }}>
+      <CarritoContext.Provider value = {{limpiarCarrito, eliminarItemCarrito, Carrito, agregarItemAlCarrito, getCantidadItems }}>
           { children }
       </CarritoContext.Provider>
     )
