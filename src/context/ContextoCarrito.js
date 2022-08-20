@@ -31,7 +31,11 @@ export const ContextoCarritoProvider = ({ children })=>{
     }
 
     const getCantidadItems = () => {
-      return Carrito.length
+      let cant = 0
+      Carrito.forEach((i)=>{
+        cant += i.cant
+      })
+      return cant
     }
 
     const eliminarItemCarrito = (id) =>{
@@ -42,9 +46,17 @@ export const ContextoCarritoProvider = ({ children })=>{
     const limpiarCarrito = () =>{
       setCarrito([])
     }
+
+    const getPrecioTotal = ()=>{
+      let res = 0
+      Carrito.forEach(i=>{
+        res += (i.precio * i.cant)
+      })
+      return res
+    }
     
     return(
-      <CarritoContext.Provider value = {{limpiarCarrito, eliminarItemCarrito, Carrito, agregarItemAlCarrito, getCantidadItems }}>
+      <CarritoContext.Provider value = {{limpiarCarrito, eliminarItemCarrito, Carrito, agregarItemAlCarrito, getCantidadItems, getPrecioTotal }}>
           { children }
       </CarritoContext.Provider>
     )

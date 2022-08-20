@@ -4,6 +4,7 @@ import ItemListContainer from '../src/components/itemListContainer/itemListConat
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import { ContextoCarritoProvider } from './context/ContextoCarrito';
+import Carrito from '../src/components/Carrito/Carrito'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path ='/detalle/:IdPlato' element={<ItemDetailContainer/>}/>
                 <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
                 <Route path='/categoria/:cat' element={<ItemListContainer/>}/>
+                <Route path='/Carrito' element={<Carrito/>}/>
               </Routes>
           </BrowserRouter>
        </ContextoCarritoProvider>
