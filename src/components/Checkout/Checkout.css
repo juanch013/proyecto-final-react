@@ -1,0 +1,18 @@
+.containerFormulario form{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.campoFormulario{
+    width: 40%;
+    margin: auto auto;
+    margin-bottom: 2%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.btnForm{
+    width: 20%;
+    margin: auto auto;
+}
