@@ -11,22 +11,16 @@ const ItemListContainer = ({text,count}) => {
 
     const [products, setproducts] = useState([]);
     const{cat} = useParams();
-
-    console.log(cat)
-
     useEffect(() => {
-
         const refColeccion = !cat ? collection(db,'productos') : query(collection(db,'productos'), where('cat', '==', cat))
         
-
         getDocs(refColeccion).then(res => {
-            console.log(res)
 
             const adaptarProductos = res.docs.map(document => {
                 const data = document.data()
                 return {id: document.id, ...data}
             })
-            console.log(adaptarProductos)
+            
             setproducts(adaptarProductos)
         }).catch(e => {
             console.log(e)

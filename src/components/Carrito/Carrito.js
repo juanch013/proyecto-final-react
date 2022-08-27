@@ -1,12 +1,12 @@
 import CarritoContext from '../../context/ContextoCarrito'
 import './Carrito.css'
 import { useContext } from 'react';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 const Carrito = () =>{
     const { Carrito , eliminarItemCarrito, getPrecioTotal} = useContext(CarritoContext);
-
-    console.log(Carrito)
     return(
         <div>
             <h2>Items agregados al Carrito</h2>
@@ -45,6 +45,8 @@ const Carrito = () =>{
                 <h2>
                    Total: ${getPrecioTotal()}
                 </h2>
+                <Link to='../Checkout'><Button>Ir al Checkout</Button></Link>
+                
             </div>
         </div>
     )
