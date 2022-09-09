@@ -55,22 +55,12 @@ const NavbarSF = () => {
                                     </DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
-                        
-
-                            <NavItem>
-                                <NavLink href="#">Promociones</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="#">Sucursales</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="#">Contacto</NavLink>
-                            </NavItem>
                         </div>
                         <div className="a">
                         <NavItem className="container-cartWidget">
                             <CartWidget/>
                         </NavItem>
+                        
                         </div>
                 </Nav>
                 
